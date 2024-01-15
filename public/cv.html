@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Accueil</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link">Mon CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="E-portfolio.html">Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-center mt-4">
+        <h1>Pour accéder au téléchargement du CV veuillez renseigner vos informations ci-dessous</h1>
+    </header>
+
+    <section class="container mt-4 custom-form">
+        <h1>Formulaire</h1>
+        <div>
+            <form id="downloadForm" action="CV - IZAK ALI (4).pdf" method="get">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required class="form-control">
+
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required class="form-control">
+
+                <label for="Entreprise">Entreprise :</label>
+                <input type="text" id="Entreprise" name="Entreprise" class="form-control">
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required class="form-control">
+
+                <button type="submit" class="btn btn-primary mt-3">Télécharger CV</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Ajout du script Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.7.2/js/bootstrap.min.js"></script>
+</body>
+</html>
