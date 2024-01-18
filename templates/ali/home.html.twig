@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css.css') }}"></head>
+<body>
+
+<div class="container mt-3">
+    <h2>Contenu de la page</h2>
+
+    <!-- Formulaire pour exécuter le script Python -->
+    <form method="post" action="{{ path('app_ali') }}">
+        <button type="submit" class="btn btn-primary">Exécuter le code Python</button>
+    </form>
+
+    <!-- Affichage du contenu HTML généré -->
+    <div class="mt-3">
+        {% if html_content is defined %}
+            <h3>Résultat HTML généré :</h3>
+            {{ html_content|raw }}
+        {% endif %}
+    </div>
+
+    <!-- Affichage des 10 premières lignes du CSV -->
+    <div class="mt-3">
+        {% if csv_data is not empty %}
+            <h3>10 premières lignes du CSV :</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        {% for header in csv_data[0] %}
+                            <th>{{ header }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in csv_data|slice(1, 10) %}
+                        <tr>
+                            {% for value in row %}
+                                <td>{{ value }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Mettez vos balises script ici selon vos besoins -->
+
+</body>
+</html>
